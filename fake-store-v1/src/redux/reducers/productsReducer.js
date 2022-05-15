@@ -5,6 +5,9 @@ const intialState = {
 const intialStatecat = {
   categories: [],
 };
+const intialStateprod = {
+  product: []
+};
 
 export const productsReducer = (state = intialState, { type, payload }) => {
   switch (type) {
@@ -25,13 +28,13 @@ export const categoriesReducer = (state = intialStatecat, { type, payload }) => 
 };
 
 
- export const selectedProductsReducer = (state = {}, { type, payload }) => {
+ export const selectedProductsReducer = (state = intialStateprod, { type, payload }) => {
   console.log(type);
   switch (type) {
     case ActionTypes.SELECTED_PRODUCT:
       return { ...state, ...payload };
     case ActionTypes.REMOVE_SELECTED_PRODUCT:
-      return {};
+      return intialStateprod;
     default:
       return state;
   }

@@ -5,13 +5,16 @@ import ProductCard from '../components/ProductCard';
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-export default function ProductGallery(){
+export default function ProductFilteredGallery({catfilter}){
     const products = useSelector((state) => state.allProducts.products);
+    //const filteredproducts= products.filter()
     return(
         <div>
+            {catfilter&&<div className='text-left px-5 pt-2'>
+                <h1 className='text-2xl font-semibold text-zinc-700'>{catfilter}</h1></div>}
            <div className='flex flex-wrap justify-between items-start pt-2 px-5 gap-x-2 gap-y-5'>
            {products? products.map(prodotto=> 
-                <Link key={prodotto.id} to={`/product/${prodotto.id}`} >
+                (prodotto.category==catfilter) && <Link key={prodotto.id} to={`/product/${prodotto.id}`} >
                     <ProductCard
                             key={prodotto.id}
                             imageurl={prodotto.image}
