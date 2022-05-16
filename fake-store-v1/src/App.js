@@ -5,6 +5,7 @@ import Header from "./containers/Header";
 import ProductPage from "./containers/ProductPage";
 import Home from './containers/Home'
 import "./App.css";
+import CartPage from "./containers/CartPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Header/>
       <Routes>
           <Route path="/" exact element={<Home/>} />
+          <Route path="/cart" element={<CartPage/>} />
           <Route path="/product/:productId" element={<ProductPage/>} />
       </Routes>
       

@@ -3,14 +3,16 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {selectedProduct,removeSelectedProduct} from "../redux/actions/productsActions";
+import { addToCart } from "../redux/actions/cartActions";
 import { StarIcon as  StarIconSolid } from '@heroicons/react/solid';
 import { StarIcon } from '@heroicons/react/outline';
+
 
 export default function ProductPage() {
 
     const { productId } = useParams();
     let product = useSelector((state) => state.product);
-    const { image, title, price, category, description } = product;
+    const { image, title, price, category, description ,id} = product;
     const dispatch = useDispatch();
 
     const fetchProductDetail = async (id) => {
@@ -58,6 +60,7 @@ export default function ProductPage() {
                     <h2 className="text-md">{price}$</h2>
                 </div>
                     <button 
+                        onClick={()=>dispatch(addToCart(id,product))}
                         className="w-full p-5 text-md text-center
                         rounded-md hover:shadow-md
                         bg-red-400 hover:bg-red-500">
