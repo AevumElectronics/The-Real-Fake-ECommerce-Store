@@ -12,9 +12,9 @@ export default function ProductFilteredGallery({catfilter}){
         <div>
             {catfilter&&<div className='text-left px-5 pt-2'>
                 <h1 className='text-2xl font-semibold text-zinc-700'>{catfilter}</h1></div>}
-           <div className='flex flex-wrap justify-between items-start pt-2 px-5 gap-x-2 gap-y-5'>
+           <div className='flex flex-wrap justify-between min-h-screen w-full items-start pt-2 px-5 gap-x-2 gap-y-5'>
            {products? products.map(prodotto=> 
-                (prodotto.category==catfilter) && <Link key={prodotto.id} to={`/product/${prodotto.id}`} >
+                (prodotto.category==catfilter || catfilter=="") && <Link key={prodotto.id} to={`/product/${prodotto.id}`} >
                     <ProductCard
                             key={prodotto.id}
                             imageurl={prodotto.image}
