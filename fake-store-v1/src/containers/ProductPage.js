@@ -63,7 +63,7 @@ export default function ProductPage() {
                         onClick={()=>dispatch(addToCart(id,product))}
                         className="w-full p-5 text-md text-center
                         rounded-md hover:shadow-md
-                        bg-red-400 hover:bg-red-500">
+                        bg-red-400 hover:bg-red-500 active:bg-red-300">
                         Add To Cart</button>
                 
                 </div>

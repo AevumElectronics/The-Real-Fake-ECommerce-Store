@@ -40,9 +40,9 @@ const ProductPage = () => {
 
   const[catfilter,setCatfilter]=useState('');
 
-  console.log("Products :", products);
-  console.log("Categories :", categories); 
-  console.log("catfilter:", catfilter);
+//  console.log("Products :", products);
+ // console.log("Categories :", categories); 
+  //console.log("catfilter:", catfilter);
 
   return (
     <div className="bg-stone-100">
