@@ -9,7 +9,7 @@ const Header = () => {
       <div className="h-fit w-16"><Link to={'/'}><img src={logo} alt="logo"/></Link></div>
       <form className="my-auto w-[80%] md:w-[50%] rounded-md overflow-hidden">
         <fieldset className="flex h-12">
-          <input placeholder="Search Product"
+          <input placeholder="Search Product    [Coming Soon]"
             className="w-full border-2 border-red-300 
               rounded-md rounded-r-none px-2
               focus:border-red-500 focus:outline-none peer"></input>
