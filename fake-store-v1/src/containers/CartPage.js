@@ -15,6 +15,7 @@ export default function CartPage() {
     const dispatch = useDispatch();
 
     function total(){
+      console.log('total')
       return cart.map((item)=>item.price*item.quantity).reduce(
         (previousValue, currentValue) => previousValue + currentValue,0).toFixed(2)
     }
