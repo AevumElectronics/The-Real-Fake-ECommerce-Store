@@ -34,7 +34,7 @@ export default function CartPage() {
                           className="object-cover max-w-[80px] rounded-sm" 
                       />       
                   </div>
-                  <div className="ml-0 mr-auto my-auto text-left text-xl py-2 text-zinc-800"><p>{item.title}</p></div> 
+                  <div className="ml-0 mr-auto my-auto text-left text-lg py-2 text-zinc-800"><p>{item.title}</p></div> 
                 
                 <div className="flex pl-5 w-fit">
 

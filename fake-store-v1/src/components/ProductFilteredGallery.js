@@ -23,7 +23,7 @@ export default function ProductFilteredGallery({catfilter}){
                             price={prodotto.price}
                         />
                 </Link>)
-            :<h2>...loading 2</h2>}
+            :<h2>...loading 2{console.log('loading non funziona cosi')}</h2>}
             </div>
         </div>
     

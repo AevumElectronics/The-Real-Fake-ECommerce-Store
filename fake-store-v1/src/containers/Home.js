@@ -11,12 +11,14 @@ import { GlobeIcon, SparklesIcon, GiftIcon } from "@heroicons/react/outline";
 const ProductPage = () => {
   const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(true);
   const fetchProducts = async () => {
+    
     const response = await axios
       .get("https://fakestoreapi.com/products")
       .catch((err) => {
         console.log("Err: ", err);
-      }).then();
+      }).then(setIsLoading(false) );
     dispatch(setProducts(response.data));
   };
 
@@ -33,6 +35,8 @@ const ProductPage = () => {
       }).then();
     dispatch(setCategories(response.data));
   };
+
+  
 
   useEffect(() => {
     fetchCategories();
@@ -53,7 +57,8 @@ const ProductPage = () => {
         </div>
         
         <div className="">
-          <div><ProductFilteredGallery catfilter={catfilter}/></div>
+          <div>{isLoading?<h2 className="text-center p-10 mx-auto">loading</h2>:
+            <ProductFilteredGallery catfilter={catfilter}/>}</div>
 
           <div className="flex justify-center py-2 px-5 gap-x-5">
             
@@ -74,8 +79,8 @@ const ProductPage = () => {
             </div>
 
           </div>
-          
-          <ProductGallery/>
+          {isLoading?<h2 className="text-center p-10 mx-auto">...</h2>:
+          <ProductGallery/>}
         </div>
         
       </div>

@@ -9,6 +9,7 @@ const intialState = {cart:[]};
 export const cartReducer = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.ADD_TO_CART:
+      
       //incart checks if the item is already in the cart
       const inCart = state.cart.find((item) => item.id === payload.id ? true : false);
       //if the product is NOT in the cart we return the cart+ the item in 1 quantity
