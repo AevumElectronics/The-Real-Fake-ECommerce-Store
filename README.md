@@ -1,6 +1,6 @@
 # The-Real-Fake-ECommerce-Store
 
-Test Bench project for a store
+Test Bench project for a store (React/Redux)
 
 Latest Build V0.7 (non-responsive):
 https://aesthetic-faun-b5da85.netlify.app/
